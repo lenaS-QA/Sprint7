@@ -16,7 +16,7 @@ public class CourierTest {
         courierClient = new CourierClient();
         courier = CourierGenerator.getDefault();
     }
-
+//в этом классе есть аннотация Афтер, удаляющая данные после каждого теста
     @Test
     @DisplayName("Check status code of courier creation")
     public void courierCanBeCreated () {

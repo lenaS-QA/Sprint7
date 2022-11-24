@@ -8,11 +8,11 @@ public class NegativeCourierTest {
     @Test
     @DisplayName("Check status code of double courier creation")
     public void DoubleCourierCreation() {
-        Courier courier1 = new Courier("grdjk", "34542", "ygfhg");
-        Courier courier2 = new Courier("grdjk", "34542", "ygfhg");
+        Courier courier = new Courier("grdjk", "34542", "ygfhg");
+        //Courier courier2 = new Courier("grdjk", "34542", "ygfhg");
         CourierClient courierClient = new CourierClient();
-        ValidatableResponse response1 = courierClient.create(courier1);
-        ValidatableResponse response2 = courierClient.create(courier2);
+        //ValidatableResponse response1 = courierClient.create(courier);
+        ValidatableResponse response2 = courierClient.create(courier);
         int statusCode = response2.extract().statusCode();
         Assert.assertEquals("You shouldn't can create two identical couriers, but you can", 409, statusCode);
     }

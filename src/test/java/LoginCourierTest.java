@@ -20,7 +20,6 @@ public class LoginCourierTest {
     @Test
     @DisplayName("Check status code of courier login")
     public void CourierLoginStatus() {
-        ValidatableResponse responseCreate = courierClient.create(courier);
         ValidatableResponse responseLogin = courierClient.login(Credentials.from(courier));
         id = responseLogin.extract().path("id");
         int statusCode = responseLogin.extract().statusCode();
